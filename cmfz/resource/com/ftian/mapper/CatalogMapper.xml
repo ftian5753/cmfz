@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ftian.dao.CatalogDAO">
+  <resultMap type="com.ftian.entity.Catalog" id="catalog">
+   <id property="id" column="cid"/>
+   <result property="name" column="cname"/>
+   <result property="url" column="curl"/>
+   <result property="type" column="ctype"/>
+   <result property="parent" column="cparent"/>
+   <result property="tag" column="ctag"/>
+   <result property="icon" column="icon"/>
+   <collection property="children" ofType="com.ftian.entity.Catalog">
+   		<id property="id" column="c2id"/>
+   		<result property="name"  column="c2name"/>
+   		<result property="url"   column="c2url"/>
+   		<result property="type"  column="c2type"/>
+   		<result property="parent"  column="c2parent"/>
+   		<result property="tag"   column="c2tag"/>
+   		<result property="icon"  column="c2cion"/>
+   </collection>
+  </resultMap>
+	<select id="selectOneself" resultMap="catalog">
+	   select 
+	   c.id cid,
+	   c.name cname,
+	   c.url curl,
+	   c.type ctype,
+	   c.parent cparent,
+	   c.tag ctag,
+	   c.icon cion,
+	   c2.id c2id,
+	   c2.name c2name,
+	   c2.url c2url,
+	   c2.type c2type,
+	   c2.parent c2parent,
+	   c2.tag c2tag,
+	   c2.icon c2ion
+	   from catalog c left join catalog c2 on c.id=c2.parent where c.tag=#{tag1} or c2.tag=#{tag2}
+	</select>
+</mapper>
