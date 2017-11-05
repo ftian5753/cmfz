@@ -19,7 +19,7 @@
    		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
    </context:component-scan>                  
 	<!-- 引入数据库配置文件 -->
-	<context:property-placeholder location="db.properties"/>
+	<context:property-placeholder location="classpath:db.properties"/>
 	<!-- 数据源的配置 -->
 	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource">
 	     <property name="driverClassName" value="${driver}"></property>

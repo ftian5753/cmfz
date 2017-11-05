@@ -3,18 +3,24 @@ package com.ftian.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import com.alibaba.fastjson.annotation.JSONField;
+
 public class Catalog implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	@JSONField(name="id")
 	private Integer id;
+	@JSONField(name="text")
 	private String name;
+	@JSONField(name="url")
 	private String url;
 	private String type;
 	private String parent;
 	private String tag;
+	@JSONField(name="iconCls")
 	private String icon;
 	private List<Catalog> children;
 	public Catalog(){}
