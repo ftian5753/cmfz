@@ -15,7 +15,7 @@ public class CatalogController {
     @RequestMapping("/cat")
     @ResponseBody
 	public List<Catalog> selectOneSelf(String tag1,String tag2){
-    	List<Catalog> list=catalogService.selectOneself(tag1, tag2);
+    	List<Catalog> list=catalogService.selectOneself("admin:show", tag2);
 		return list;
 	}
 }

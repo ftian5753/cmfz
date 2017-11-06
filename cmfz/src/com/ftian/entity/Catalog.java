@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.List;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 public class Catalog implements Serializable{
 
@@ -22,6 +24,7 @@ public class Catalog implements Serializable{
 	private String tag;
 	@JSONField(name="iconCls")
 	private String icon;
+	//@JsonInclude(Include.NON_NULL)
 	private List<Catalog> children;
 	public Catalog(){}
 	public Catalog(Integer id, String name, String url, String type,

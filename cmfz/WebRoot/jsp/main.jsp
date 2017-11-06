@@ -25,10 +25,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	   $(function(){
 	       $("#tt").tree({
 	         url:"${pageContext.request.contextPath}/con/cat",
-	         state:"closed",
-	         onClick:function(node){
-	         $("#cen").panel("open").panel("refresh",open.url)
-	         }
+	         state:"closed"
+	       // onClick:function(node){
+	        // $("#cen").panel("open").panel("refresh",open.url)
+	        // }
 	       }); 
 	   });
 	</script>
