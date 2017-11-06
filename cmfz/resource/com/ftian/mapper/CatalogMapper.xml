@@ -35,6 +35,6 @@
 	   c2.parent c2parent,
 	   c2.tag c2tag,
 	   c2.icon c2ion
-	   from catalog c left join catalog c2 on c.id=c2.parent where c.tag=#{tag1} or c2.tag=#{tag2}
+	   from catalog c inner join catalog c2 on c.id=c2.parent where c.tag=#{tag1} or c2.tag=#{tag2}
 	</select>
 </mapper>

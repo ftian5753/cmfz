@@ -24,7 +24,7 @@ public class Catalog implements Serializable{
 	private String tag;
 	@JSONField(name="iconCls")
 	private String icon;
-	//@JsonInclude(Include.NON_NULL)
+	@JsonInclude(Include.NON_NULL)
 	private List<Catalog> children;
 	public Catalog(){}
 	public Catalog(Integer id, String name, String url, String type,

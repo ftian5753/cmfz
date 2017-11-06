@@ -16,21 +16,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 	<meta http-equiv="description" content="This is my page">
 	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/easyui.css">
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/icon.css">
+	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/demo.css">
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.easyui.min.js"></script>
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/easyui-lang-zh_CN.js"></script>
 	<script type="text/javascript">
 	 //在页面加载完毕后，重新加载JS代码
-	   $(function(){
+	  $(function(){
 	       $("#tt").tree({
 	         url:"${pageContext.request.contextPath}/con/cat",
-	         state:"closed"
+	         state:"closed",
+	         lines:true,
+	         
 	       // onClick:function(node){
 	        // $("#cen").panel("open").panel("refresh",open.url)
-	        // }
+	         //}
 	       }); 
 	   });
+	   
 	</script>
   </head>
  <body class="easyui-layout">
